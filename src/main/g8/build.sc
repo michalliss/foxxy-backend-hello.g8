@@ -19,9 +19,9 @@ object $name$ extends AppScalaModule {
 
   object test extends ScalaTests with TestModule.ZioTest {
     def ivyDeps = Agg(
-      ivy"dev.zio::zio-test:2.1.11",
-      ivy"dev.zio::zio-test-sbt:2.1.11",
-      ivy"dev.zio::zio-test-magnolia:2.1.11",
+      ivy"dev.zio::zio-test:2.1.12",
+      ivy"dev.zio::zio-test-sbt:2.1.12",
+      ivy"dev.zio::zio-test-magnolia:2.1.12",
       ivy"io.github.michalliss::foxxy-testing:0.0.7"
     )
   }
