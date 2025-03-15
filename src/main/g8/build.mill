@@ -1,11 +1,11 @@
 import mill._
 import mill.scalalib._
-import \$ivy.`com.goyeau::mill-scalafix::0.4.2`
+import \$ivy.`com.goyeau::mill-scalafix::0.5.1`
 import com.goyeau.mill.scalafix.ScalafixModule
 import scalafmt._
 
 object config {
-  val scalaVersion = "3.5.2"
+  val scalaVersion = "3.6.4"
 }
 
 trait AppScalaModule extends ScalaModule with ScalafixModule with ScalafmtModule  {
@@ -14,15 +14,15 @@ trait AppScalaModule extends ScalaModule with ScalafixModule with ScalafmtModule
 }
 
 object $name$ extends AppScalaModule {
-  def scalaVersion = "3.5.2"
-  def ivyDeps = Agg(ivy"io.github.michalliss::foxxy-backend:0.0.7")
+  def scalaVersion = config.scalaVersion
+  def ivyDeps = Agg(ivy"io.github.michalliss::foxxy-backend:0.0.11")
 
   object test extends ScalaTests with TestModule.ZioTest {
     def ivyDeps = Agg(
-      ivy"dev.zio::zio-test:2.1.12",
-      ivy"dev.zio::zio-test-sbt:2.1.12",
-      ivy"dev.zio::zio-test-magnolia:2.1.12",
-      ivy"io.github.michalliss::foxxy-testing:0.0.7"
+      ivy"dev.zio::zio-test:2.1.16",
+      ivy"dev.zio::zio-test-sbt:2.1.16",
+      ivy"dev.zio::zio-test-magnolia:2.1.16",
+      ivy"io.github.michalliss::foxxy-testing:0.0.11"
     )
   }
 }
